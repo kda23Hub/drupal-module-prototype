@@ -1,0 +1,7 @@
+offer.config:
+  path: '/admin/config/offer/adminsettings'
+  defaults:
+    _title: 'Offer platform global settings'
+    _form: 'Drupal\offer\Form\CustomConfigForm'
+  requirements:
+    _permission: 'administer site configuration'
