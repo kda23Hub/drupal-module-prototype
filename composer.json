@@ -46,6 +46,11 @@
         "sort-packages": true
     },
     "extra": {
+        "patches": {
+            "drupal/core": {
+                "TranslatableMarkup is created with a non-string input": "./patches/drupal_core_translatablemarkup-2719553-6.patch"
+            }
+        },
         "drupal-scaffold": {
             "locations": {
                 "web-root": "web/"
