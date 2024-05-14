@@ -10,7 +10,7 @@ use Drupal\Core\Session\AccountInterface;
 /**
  * Access controller for the offer entity. Controls create/edit/delete access for entity and fields
  *
- * 
+ *
  * @see \Drupal\offer\Entity\Offer.
  */
 
@@ -64,7 +64,8 @@ class OfferAccessControlHandler extends EntityAccessControlHandler {
    */
   protected function checkCreateAccess(AccountInterface $account, array $context, $entity_bundle = NULL)
   {
-    return AccessResult::allowedIfHasPermission($account, 'administer owm offers');
+    return true;
+//    return AccessResult::allowedIfHasPermission($account, 'administer owm offers');
   }
 
 }
