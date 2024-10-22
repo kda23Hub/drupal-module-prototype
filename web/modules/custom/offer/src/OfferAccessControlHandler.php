@@ -64,8 +64,7 @@ class OfferAccessControlHandler extends EntityAccessControlHandler {
    */
   protected function checkCreateAccess(AccountInterface $account, array $context, $entity_bundle = NULL)
   {
-    return true;
-//    return AccessResult::allowedIfHasPermission($account, 'administer owm offers');
+    return AccessResult::allowedIfHasPermission($account, 'administer owm offers');
   }
 
 }
