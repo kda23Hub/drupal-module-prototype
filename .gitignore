@@ -1,23 +1,19 @@
-# This file contains default .gitignore rules. To use it, copy it to .gitignore,
-# and it will cause files like your settings.php and user-uploaded files to be
-# excluded from Git version control. This is a common strategy to avoid
-# accidentally including private information in public repositories and patch
-# files.
+# This file defines patterns for files and directories that should be ignored
+# by Git in a Drupal 10 project. This helps to prevent sensitive information
+# and user-uploaded files from being committed to the repository.
 #
-# Because .gitignore can be specific to your site, this file has a different
-# name; updating Drupal core will not override your custom .gitignore file.
+# Ignore the Drupal core directory when managing all project dependencies with Composer.
+# This includes core files and directories.
+web/core/
 
-# Ignore core when managing all of a project's dependencies with Composer
-# including Drupal core.
-/web/core/
-
-# Ignore dependencies that are managed with Composer.
-# Generally you should only ignore the root vendor directory. It's important
-# that core/assets/vendor and any other vendor directories within contrib or
-# custom module, theme, etc., are not ignored unless you purposely do so.
-/vendor/
-/web/modules/contrib/
-/web/sites/default/files/
+# Ignore Composer-managed dependencies.
+# Only the root vendor directory should be ignored. Core/assets/vendor
+# and other vendor directories in contrib or custom modules/themes
+# should not be ignored unless intended.
+vendor/
+web/modules/contrib/
+themes/contrib/
+web/sites/default/files/
 
 # Ignore configuration files that may contain sensitive information.
 sites/*/settings*.php
@@ -27,11 +23,11 @@ sites/*/services*.yml
 sites/*/files
 sites/*/private
 
-# Ignore multi-site test environment.
+# Ignore the multi-site test environment.
 sites/simpletest
 
-# If you prefer to store your .gitignore file in the sites/ folder, comment
-# or delete the previous settings and uncomment the following ones, instead.
+# If you prefer to store your .gitignore file in the sites/ folder,
+# you can comment out the above lines and uncomment the following ones.
 
 # Ignore configuration files that may contain sensitive information.
 */settings*.php
@@ -43,6 +39,14 @@ sites/simpletest
 # Ignore multi-site test environment.
 # simpletest
 
+# Ignore development and IDE files.
 .docksal/
 .idea/
 .DS_Store
+
+# Ignore any local development configuration files.
+local.settings.php
+*.local.yml
+
+# Ignore Composer lock files for local development.
+composer.lock
